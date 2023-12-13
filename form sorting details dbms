@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+</head>
+<body>
+    <h2>User Registration Form</h2>
+    <form action = 'Ques16register.php' method = 'post'>
+        <label for="uname">Username:</label>
+        <input type="text" name= 'uname' required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" name= 'email' required><br><br>
+        <label for="pswd">Password:</label>
+        <input type="password" name= 'pswd' required><br><br>
+        <input type="submit" value = 'Register'><br>
+    </form>
+    
+</body>
+</html>
+Php File:-
+<?php
+if ($_SERVER['REQUEST_METHOD']=='POST'){
+    $servername = 'localhost';
+    $username = 'root';
+    $password = '';
+    $dbname = 'sampledb';
+    $conn = new mysqli($servername,$username,$password,$dbname);
+    if ($conn->connect_error){
+        die('Connection failed: '.$conn->connect_error);
+    }
+    $username = $_POST['uname'];
+    $email = $_POST['email'];
+    $password = password_hash($_POST['pswd'],PASSWORD_DEFAULT);
+    $sql = "INSERT INTO users(Username, Email, Password) VALUES('$username','$email','$password')";
+
+    if ($conn->query($sql) === TRUE){
+        echo "<p> Registration Successful!</p>";
+    }
+    else{
+        echo "<p>Error: ".$sql."<br>".$conn->error."</p>";
+    }
+    $conn->close();
+}
+?>
