@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Page Form - Page 1</title>
+</head>
+<body>
+    <h1>Page 1</h1>
+    <form method="POST" action="Ques14 PAGE2.php">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Next</button>
+    </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Page Form - Page 2</title>
+</head>
+<body>
+    <?php
+    session_start();
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $_SESSION['name'] = isset($_POST['name']) ? $_POST['name'] : '';
+    }
+    ?>
+    <h1>Page 2</h1>
+    <form method="POST" action="Ques14PAGE3.php">
+        <p>Name: <?php echo $_SESSION['name']; ?></p>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Next</button>
+    </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Page Form - Page 3</title>
+</head>
+<body>
+    <?php
+    session_start();
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $_SESSION['email'] = isset($_POST['email']) ? $_POST['email'] : '';
+    }
+    ?>
+    <h1>Page 3</h1>
+    <form method="POST" action="Ques14PAGE4DISPLAY.PHP">
+        <p>Name: <?php echo $_SESSION['name']; ?></p>
+        <p>Email: <?php echo $_SESSION['email']; ?></p>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Form Data</title>
+</head>
+<body>
+    <?php
+    session_start();
+    $name = $_SESSION['name'] ?? '';
+    $email = $_SESSION['email'] ?? '';
+    $message = isset($_POST['message']) ? $_POST['message'] : '';
+    session_unset();
+    session_destroy();
+    ?>
+    <h1>Display Page</h1>
+    <p>Name: <?php echo $name; ?></p>
+    <p>Email: <?php echo $email; ?></p>
+    <p>Message: <?php echo $message; ?></p>
+</body>
+</html>
