@@ -1,0 +1,150 @@
+// html 
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-image: linear-gradient(to left, #d42c2c, #a8194f, #6c2456, #342342, #15161c); }
+        table{
+            display: flex;
+            justify-content: center;
+            color: white;}
+        table tr th{
+            padding: 00px 50px;
+            border: none;
+            font-family: Arial, Helvetica, sans-serif;}   
+        table tr td{
+            padding: 10px 30px;
+            border: none;
+            font-family: Arial, Helvetica, sans-serif; }  
+        table tr td:hover{
+            background: rgba(100, 100,100,0.5);
+            cursor: pointer;}
+        table tr th:hover{
+            background-color:dimgrey;
+            transition: 0.3s;
+            cursor: pointer;}
+        td.COMTH{
+            background-color: aqua;
+            color: black;
+            font-weight: bolder;  }
+        td.math{
+            background-color:aquamarine;
+            color: black;
+            font-weight: bolder }
+        td.weblab{
+            background-color:rgb(160, 77, 237);
+            font-weight: bold}
+        td.phy{
+            background-color:fuchsia;
+            font-weight: bold}
+        td.comlab{
+            background-color:gold;
+            color: black;
+            font-weight: bolder;}
+        td.iot{
+            background-color:green;
+            font-weight: bolder;}
+        td.eng{
+            background-color:rgb(3, 65, 120);
+            font-weight: bolder;  }
+        td.webth{
+            background-color:blanchedalmond;
+            color: black;
+            font-weight: bolder;}
+        td.phylab{
+            background-color:cornflowerblue;
+            color: black;
+            font-weight: bolder;}
+        td.LUNCH{
+            background-color:chocolate;
+            writing-mode: vertical-rl;
+            text-orientation:upright;
+            color: black;
+            font-weight: bolder;}
+        td.Free{
+            background-color: darksalmon;
+            color: black;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <table cellpadding="2px" cellspacing="5px">
+        <tr>
+            <th>Lec No:-</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+        </tr>
+        
+        <tr>
+            <th>Day/Time</th>
+            <th>10:00 - 11:00</th>
+            <th>11:00 - 12:00</th>
+            <th>12:00 - 1:00</th>
+            <th>1:00 - 2:00</th>
+            <th>2:00 - 3:00</th>
+            <th>3:00 - 4:00</th>
+            <th>4:00 - 5:00</th>
+            <th>5:00 - 6:00</th>
+
+        </tr>
+
+        <tr>
+            <th>Mon</th>
+            <td class="COMTH">BCSC 0061</td>
+            <td class="math">BMAS 0107</td>
+            <td colspan="2" class="weblab">BCSC 0859</td>
+            <td class="LUNCH">LUNCH</td>
+            <td class="phy">BPHS 1004</td>
+            <td colspan="2" class="comlab">BCSC 0858</td>
+        </tr>
+
+        <tr>
+            <th>Tue</th>
+            <td colspan="2" class="iot">BCSE 0709</td>
+            <td class="math">BMAS 0107</td>
+            <td class="LUNCH">LUNCH</td>
+            <td class="webth">BCSC 0062</td>
+            <td class="phy">BPHS 1004</td>
+            <td class="math">BMAS 0104</td>
+            <td class="eng">BELH 0807</td>
+        </tr>
+
+        <tr>
+            <th>Wed</th>
+            <td class="COMTH">BCSC 0061</td>
+            <td class="eng">BELH 0107</td>
+            <td class="weblab" colspan="2">BCSC 0859</td>
+            <td class="LUNCH">LUNCH</td>
+            <td class="math">BMAS 0107</td>
+            <td colspan="2" class="Free">Free Period</td>
+        </tr>
+
+        <tr>
+            <th>Thu</th>
+            <td class="Free">Free Period</td>
+            <td class="phy">BPHS  1004</td>
+            <td class="iot">BCSE 0709</td>
+            <td class="LUNCH" rowspan="2">LUNCH</td>
+            <td class="Free">Free Period</td>
+            <td class="eng">BELH 1014</td>
+            <td class="phylab" colspan="2">BPHS 0801</td>
+        </tr>
+
+        <tr>
+            <th>Fri</th>
+            <td class="iot" colspan="2">BCSE 0709</td>
+            <td class="eng">BELH 1014</td>
+            <td class="webth">BCSC 0062</td>
+            <td class="phy">BPHS 1004</td>
+            <td class="comlab" colspan="2">BCSG 0858</td>
+        </tr>
+    </table>
+</body>
+</html>
