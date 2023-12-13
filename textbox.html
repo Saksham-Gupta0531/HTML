@@ -1,0 +1,26 @@
+//text box
+<html lang="en">
+<head>
+    <style>
+        form{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);}
+        textarea{
+            border: 2px solid black;
+            background-color:palevioletred;
+            box-shadow: 0px 0px 15px black;}
+        input{
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(10,255, 10, 0.6); 
+            box-shadow: 0px 0px 5px black;           }
+    </style>
+</head>
+<body>
+    <form action="ppt.php" method="post">
+        <textarea name="content" id="content" cols="30" rows="10"></textarea><br><br>
+        <input type="submit" >
+    </form></body></html>
