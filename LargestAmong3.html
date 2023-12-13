@@ -1,0 +1,19 @@
+<html lang="en">
+<body>
+    <p id="rt">Result:-</p>
+    <script>
+        var a=+prompt("Enter the 1st Number");
+        var b=+prompt("Enter the 2nd Number");
+        var c=+prompt("Enter the 3rd Number");
+        if(a>b && a>c){
+            document.getElementById("rt").innerHTML="Result:-"+a;   
+        }
+        if(b>c && b>a){
+            document.getElementById("rt").innerHTML="Result:-"+b;
+        }
+        if(c>a && c>b){
+            document.getElementById("rt").innerHTML="Result:-"+c;
+        }
+    </script>
+</body>
+</html>
