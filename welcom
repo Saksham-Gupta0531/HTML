@@ -1,0 +1,29 @@
+HTML File:-
+<html lang="en">
+<head>
+</head>
+<body>
+    <form action="Q4.php" method="post">
+        <input type="text" placeholder="Enter Name" name="fname">
+        <input type="text" placeholder="Enter Gender" name="gender">
+        <input type="Submit" value="Submit">
+    </form>
+</body>
+</html>
+Php file:
+<?php
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    $name=$_POST["fname"];
+    $gender=strtolower( $_POST["gender"] );
+}
+if(empty($name) || empty($gender)){
+    echo "Empty Field... Please Complete The Form... \n";
+}
+else{
+    if($gender==="male"){
+    echo"Welcome Mr. $name \n";
+    }
+    else{
+        echo "Welcome Mrs. $name \n";
+    }
+}
